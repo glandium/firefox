@@ -10157,7 +10157,7 @@ nsIPrincipal* nsDocShell::GetInheritedPrincipal(
       aRv = nsContentUtils::GetSecurityManager()->GetChannelResultPrincipal(
           channel, getter_AddRefs(resultPrincipal));
       NS_ENSURE_SUCCESS(aRv, false);
-      if (nsContentSecurityUtils::IsConsideredSameOriginForUIR(
+      if (nsContentSecurityUtils::IsConsideredSameOriginForURI(
               aLoadState->TriggeringPrincipal(), resultPrincipal)) {
         aLoadInfo->SetUpgradeInsecureRequests(true);
       }

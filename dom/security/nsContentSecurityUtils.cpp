@@ -57,7 +57,7 @@ extern Atomic<bool, mozilla::Relaxed> sJSHacksPresent;
 extern Atomic<bool, mozilla::Relaxed> sCSSHacksChecked;
 extern Atomic<bool, mozilla::Relaxed> sCSSHacksPresent;
 
-// Helper function for IsConsideredSameOriginForUIR which makes
+// Helper function for IsConsideredSameOriginForURI which makes
 // Principals of scheme 'http' return Principals of scheme 'https'.
 static already_AddRefed<nsIPrincipal> MakeHTTPPrincipalHTTPS(
     nsIPrincipal* aPrincipal) {
@@ -87,7 +87,7 @@ static already_AddRefed<nsIPrincipal> MakeHTTPPrincipalHTTPS(
 }
 
 /* static */
-bool nsContentSecurityUtils::IsConsideredSameOriginForUIR(
+bool nsContentSecurityUtils::IsConsideredSameOriginForURI(
     nsIPrincipal* aTriggeringPrincipal, nsIPrincipal* aResultPrincipal) {
   MOZ_ASSERT(aTriggeringPrincipal);
   MOZ_ASSERT(aResultPrincipal);

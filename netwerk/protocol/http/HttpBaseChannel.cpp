@@ -4474,7 +4474,7 @@ already_AddRefed<nsILoadInfo> HttpBaseChannel::CloneLoadInfoForRedirect(
             BasePrincipal::CreateContentPrincipal(
                 aNewURI, newLoadInfo->GetOriginAttributes());
         bool isConsideredSameOriginforUIR =
-            nsContentSecurityUtils::IsConsideredSameOriginForUIR(
+            nsContentSecurityUtils::IsConsideredSameOriginForURI(
                 newLoadInfo->TriggeringPrincipal(), resultPrincipal);
         static_cast<mozilla::net::LoadInfo*>(newLoadInfo.get())
             ->SetUpgradeInsecureRequests(isConsideredSameOriginforUIR);

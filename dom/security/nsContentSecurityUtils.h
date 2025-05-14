@@ -33,7 +33,7 @@ class nsContentSecurityUtils {
   // page triggers and http page to load, even though that http page would be
   // upgraded to https later. Hence we have to use that custom function instead
   // of simply calling aTriggeringPrincipal->Equals(aResultPrincipal).
-  static bool IsConsideredSameOriginForUIR(nsIPrincipal* aTriggeringPrincipal,
+  static bool IsConsideredSameOriginForURI(nsIPrincipal* aTriggeringPrincipal,
                                            nsIPrincipal* aResultPrincipal);
 
   static bool IsEvalAllowed(JSContext* cx, bool aIsSystemPrincipal,
